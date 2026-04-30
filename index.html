@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AIDO Healthcare</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+.hero-bg {
+background: linear-gradient(120deg, #0f172a 40%, rgba(15,23,42,0.6)),
+url('images/hero1.jpg');
+background-size: cover;
+background-position: center;
+}
+
+.curve {
+border-bottom-left-radius: 50% 10%;
+border-bottom-right-radius: 50% 10%;
+}
+
+.service-active {
+background: #e2e8f0; /* soft bluish-gray */
+color: #0f172a;
+border: 1px solid #cbd5e1;
+
+transform: translateY(-4px);
+
+box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.service-active p {
+color: #475569;
+}
+
+.service-card {
+transition: all 0.4s ease;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+</style>
+
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+<!-- NAVBAR -->
+<nav class="fixed w-full bg-white/80 backdrop-blur-lg shadow z-50">
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+<div class="flex items-center gap-3">
+<img src="images/logo.png" class="w-10 h-10 rounded-full shadow-md bg-white p-1">
+<div>
+<h1 class="text-lg font-bold text-gray-800">AIDO</h1>
+<p class="text-xs text-gray-500 -mt-1">Healthcare at Your Doorstep</p>
+</div>
+</div>
+
+<div class="hidden md:flex items-center gap-10 text-gray-700 font-medium ml-auto">
+<a href="#" class="hover:text-green-600">Home</a>
+<a href="#about" class="hover:text-green-600">About</a>
+<a href="#services" class="hover:text-green-600">Services</a>
+<a href="how-it-works.html" class="hover:text-green-500">How it Works</a>
+</div>
+
+
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-bg text-white pt-32 pb-20 curve">
+
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center gap-10">
+
+<!-- LEFT -->
+<div>
+
+<div class="inline-block bg-green-500/20 px-4 py-2 rounded-full mb-4 text-sm">
+✔ Trusted Care, Anywhere
+</div>
+
+<h1 class="text-5xl font-bold leading-tight mb-6">
+Healthcare at <br>
+<span class="text-green-400">Your Doorstep</span>
+</h1>
+
+<p class="mb-6 text-gray-300">
+AIDO enables patients to request healthcare services directly from home using a mobile platform that connects them with nearby professionals.
+</p>
+
+<div class="flex gap-4">
+<a href="#services" class="bg-green-500 px-6 py-3 rounded-full inline-block hover:bg-green-600 transition">
+Explore Services →
+</a>
+
+<button onclick="openVideo('videos/demo.mp4')"
+class="bg-white text-gray-800 px-6 py-3 rounded-full hover:bg-gray-200 transition">
+  Why it's Useful
+</button>
+</div>
+
+<!-- FEATURES -->
+<div class="flex gap-6 mt-8 text-sm">
+
+<div>
+⚡ Instant Booking<br>
+<span class="text-gray-400">Book in seconds</span>
+</div>
+
+<div>
+🛡 Verified Professionals<br>
+<span class="text-gray-400">Trusted & experienced</span>
+</div>
+
+<div>
+⏱ On-time Service<br>
+<span class="text-gray-400">Right at your home</span>
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT IMAGE -->
+<div>
+<img src="images/hero-nurse.png" class="rounded-xl shadow-2xl">
+</div>
+
+</div>
+
+</section>
+
+<!-- WHY AIDO -->
+<section id="about" class="py-20 bg-white">
+
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+
+<div>
+<p class="text-green-500 font-semibold mb-2">WHY AIDO?</p>
+
+<h2 class="text-3xl font-bold mb-4">
+Better Care, Right Where You Are
+</h2>
+
+<p class="text-gray-600 mb-6">
+AIDO makes it easy for people to get medical help nearby. You can find doctors and book appointments in just a few steps, saving you time and avoiding long waits at hospitals.
+</p>
+
+<ul class="space-y-2 text-gray-600">
+<li>✔ No long queues</li>
+<li>✔ No travel hassle</li>
+<li>✔ Safe & reliable</li>
+<li>✔ Personalized care</li>
+</ul>
+
+<button onclick="openVideo('videos/learn-more.mp4')"
+class="mt-6 bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 transition">
+Learn More →
+</button>
+</div>
+
+<div class="flex justify-center items-center gap-6">
+
+<!-- LEFT (BIG IMAGE) -->
+<div>
+<img src="images/doc1.jpg" class="rounded-xl w-64 h-80 object-cover shadow-lg">
+</div>
+
+<!-- RIGHT (STACKED IMAGES) -->
+<div class="flex flex-col gap-6">
+
+<img src="images/doc2.jpg" class="rounded-xl w-56 h-36 object-cover shadow-md">
+
+<img src="images/doc3.jpg" class="rounded-xl w-56 h-36 object-cover shadow-md">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="py-20 bg-gray-100">
+
+<div class="text-center mb-12">
+<p class="text-green-500 font-semibold">OUR SERVICES</p>
+<h2 class="text-3xl font-bold">Care That Comes to You</h2>
+</div>
+
+<div class="relative overflow-hidden max-w-7xl mx-auto px-6">
+
+<!-- SLIDER -->
+<div id="serviceSlider" class="flex gap-6 transition-transform duration-700">
+
+<!-- CARD -->
+<div class="service-card min-w-[200px] h-[170px] bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center transition-all duration-500 hover:shadow-lg hover:-translate-y-2">
+
+<img src="images/doctor.png" class="w-12 h-12 object-contain mb-3">
+
+<h3 class="font-semibold text-base leading-tight">Doctor</h3>
+
+<p class="text-gray-500 text-sm mt-1">Consult at home</p>
+
+</div>
+
+
+<div class="service-card min-w-[200px] h-[170px] bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center transition-all duration-500 hover:shadow-lg hover:-translate-y-2">
+
+<img src="images/nurse.png" class="w-12 h-12 object-contain mb-3">
+
+<h3 class="font-semibold text-base leading-tight">Nurse</h3>
+
+<p class="text-gray-500 text-sm mt-1">Nursing care</p>
+
+</div>
+
+
+<div class="service-card min-w-[200px] h-[170px] bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center transition-all duration-500 hover:shadow-lg hover:-translate-y-2">
+
+<img src="images/physio.png" class="w-12 h-12 object-contain mb-3">
+
+<h3 class="font-semibold text-base leading-tight">Physio</h3>
+
+<p class="text-gray-500 text-sm mt-1">Recovery sessions</p>
+
+</div>
+
+
+<div class="service-card min-w-[200px] h-[170px] bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center transition-all duration-500 hover:shadow-lg hover:-translate-y-2">
+
+<img src="images/phlebotomist.png" class="w-12 h-12 object-contain mb-3">
+
+<h3 class="font-semibold text-base leading-tight">Phlebotomist</h3>
+
+<p class="text-gray-500 text-sm mt-1">Blood collection</p>
+
+</div>
+
+
+<div class="service-card min-w-[200px] h-[170px] bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center transition-all duration-500 hover:shadow-lg hover:-translate-y-2">
+
+<img src="images/lab.png" class="w-12 h-12 object-contain mb-3">
+
+<h3 class="font-semibold text-base leading-tight">Lab</h3>
+
+<p class="text-gray-500 text-sm mt-1">Diagnostics at home</p>
+
+</div>
+
+
+<div class="service-card min-w-[200px] h-[170px] bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center transition-all duration-500 hover:shadow-lg hover:-translate-y-2">
+
+<img src="images/pharmacy.png" class="w-12 h-12 object-contain mb-3">
+
+<h3 class="font-semibold text-base leading-tight">Pharmacy</h3>
+
+<p class="text-gray-500 text-sm mt-1">Medicine supply</p>
+
+</div>
+
+<div class="service-card min-w-[200px] h-[170px] bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center transition-all duration-500 hover:shadow-lg hover:-translate-y-2">
+
+<img src="images/delivery.png"class="w-12 h-12 object-contain mb-3">
+
+<h3 class="font-semibold text-base leading-tight">Delivery</h3>
+
+<p class="text-gray-500 text-sm mt-1">Medicine delivery</p>
+
+</div>
+
+</div>
+</div>
+
+</section>
+
+<!-- APP SECTION -->
+<section class="py-20 bg-gradient-to-r from-green-600 to-blue-600 text-white">
+
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+
+<div>
+<h2 class="text-3xl font-bold mb-4">
+Everything You Need, All in One App
+</h2>
+
+<p class="mb-6">
+Book, track, and manage healthcare services easily through the AIDO mobile platform.
+</p>
+
+<div class="flex gap-4">
+<img src="images/playstore.png" class="h-12">
+</div>
+
+</div>
+
+<div class="flex justify-center items-center relative h-[420px]">
+
+<!-- CENTER (MAIN SCREEN) -->
+<img src="images/app1.png"
+class="h-96 rounded-2xl shadow-2xl z-20">
+
+<!-- LEFT SCREEN -->
+<img src="images/app2.png"
+class="h-80 rounded-2xl shadow-xl absolute left-10 top-10 opacity-80 scale-95">
+
+<!-- RIGHT SCREEN -->
+<img src="images/app33.png"
+class="h-80 rounded-2xl shadow-xl absolute right-10 top-10 opacity-80 scale-95">
+
+
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-white py-10">
+
+<div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-6 px-6">
+
+<div>
+<h3 class="font-bold mb-2">AIDO</h3>
+<p class="text-gray-400">On-demand home healthcare platform</p>
+</div>
+
+<div>
+<h3 class="font-bold mb-3">Quick Links</h3>
+
+<a href="#" class="block text-gray-400 hover:text-white hover:translate-x-1 transition mb-1">
+Home
+</a>
+
+<a href="#about" class="block text-gray-400 hover:text-white hover:translate-x-1 transition mb-1">
+About
+</a>
+
+<a href="#services" class="block text-gray-400 hover:text-white hover:translate-x-1 transition mb-1">
+Services
+</a>
+</div>
+
+<div>
+<h3 class="font-bold mb-3">FAQs</h3>
+
+<a href="privacy.html" class="block text-gray-400 hover:text-white mb-1">
+Privacy Policy
+</a>
+
+<a href="terms.html" class="block text-gray-400 hover:text-white mb-1">
+Terms & Conditions
+</a>
+
+<a href="disclaimer.html" class="block text-gray-400 hover:text-white mb-1">
+Medical Disclaimer
+</a>
+
+<a href="consent.html" class="block text-gray-400 hover:text-white mb-1">
+Patient Consent
+</a>
+
+<a href="refund.html" class="block text-gray-400 hover:text-white mb-1">
+Support & Refund Policy
+</a>
+
+</div>
+
+
+<div>
+<h3 class="font-bold mb-2">Contact</h3>
+<p>care@dpdpd.in</p>
+<p>Andhra Pradesh, India</p>
+</div>
+
+</div>
+
+<!-- DYNAMIC LEGAL SECTIONS -->
+
+<div id="privacy" class="hidden max-w-5xl mx-auto px-6 py-20">
+<h2 class="text-3xl font-bold mb-6">Privacy Policy</h2>
+
+<p>We comply with the Digital Personal Data Protection (DPDP) Act.</p>
+<p>Personal data is used only for service delivery and not shared with third parties.</p>
+
+</div>
+
+
+<div id="terms" class="hidden max-w-5xl mx-auto px-6 py-20">
+<h2 class="text-3xl font-bold mb-6">Terms & Conditions</h2>
+
+<p>By using AIDO services, you agree to all platform policies and service rules.</p>
+<p>Services depend on provider availability and location.</p>
+
+</div>
+
+
+<div id="disclaimer" class="hidden max-w-5xl mx-auto px-6 py-20">
+<h2 class="text-3xl font-bold mb-6">Medical Disclaimer</h2>
+
+<p>This platform provides non-emergency healthcare services only.</p>
+<p>For emergencies, visit the nearest hospital immediately.</p>
+
+</div>
+
+
+<div id="consent" class="hidden max-w-5xl mx-auto px-6 py-20">
+<h2 class="text-3xl font-bold mb-6">Patient Consent</h2>
+
+<p>By booking, you consent to receive home healthcare services.</p>
+<p>The hospital and healthcare provider are responsible for treatment.</p>
+
+</div>
+
+
+<div id="refund" class="hidden max-w-5xl mx-auto px-6 py-20">
+<h2 class="text-3xl font-bold mb-6">Support & Refund Policy</h2>
+
+<p>Full refund is available only if cancellation happens before service starts.</p>
+<p>No refund after provider starts travel or service begins.</p>
+
+</div>
+
+</footer>
+<script>
+const slider = document.getElementById("serviceSlider");
+const cards = Array.from(document.querySelectorAll(".service-card"));
+
+// duplicate ALL cards for seamless loop
+cards.forEach(card => {
+const clone = card.cloneNode(true);
+slider.appendChild(clone);
+});
+
+let position = 0;
+let index = 0;
+
+const cardWidth = cards[0].offsetWidth + 24;
+
+function slideServices() {
+position += cardWidth;
+
+slider.style.transition = "transform 0.8s ease";
+slider.style.transform = `translateX(-${position}px)`;
+
+// remove all highlights
+const allCards = document.querySelectorAll(".service-card");
+allCards.forEach(c => c.classList.remove("service-active"));
+
+// highlight correct card
+let activeIndex = index % cards.length;
+allCards[activeIndex].classList.add("service-active");
+
+// increment AFTER highlight
+index++;
+
+// infinite smooth reset
+if (position >= cardWidth * cards.length) {
+setTimeout(() => {
+slider.style.transition = "none";
+slider.style.transform = "translateX(0)";
+position = 0;
+}, 800);
+}
+}
+
+// slower & smoother (4 sec)
+setInterval(slideServices, 4000);
+
+slideServices();
+</script>
+<!-- VIDEO MODAL -->
+
+<!-- VIDEO MODAL -->
+<div id="videoModal"
+onclick="closeVideo()"
+class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
+
+  <div onclick="event.stopPropagation()"
+  class="bg-black rounded-xl overflow-hidden relative w-[90%] md:w-[700px]">
+
+    <button onclick="closeVideo()"
+    class="absolute top-2 right-2 text-white text-2xl">&times;</button>
+
+    <video id="videoPlayer" controls class="w-full"></video>
+
+  </div>
+</div>
+
+
+<!-- ✅ PLACE SCRIPT HERE -->
+<script>
+function openVideo(videoSrc) {
+  const modal = document.getElementById("videoModal");
+  const video = document.getElementById("videoPlayer");
+
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+
+  video.src = videoSrc;   // ⭐ important
+  video.currentTime = 0;
+  video.play();
+}
+
+function closeVideo() {
+  const modal = document.getElementById("videoModal");
+  const video = document.getElementById("videoPlayer");
+
+  modal.classList.add("hidden");
+  modal.classList.remove("flex");
+
+  video.pause();
+  video.src = ""; // reset
+}
+
+function closeVideo() {
+  const modal = document.getElementById("videoModal");
+  const video = document.getElementById("videoPlayer");
+
+  modal.classList.add("hidden");
+  modal.classList.remove("flex");
+
+  video.pause();
+}
+</script>
+
+<script>
+function showSection(sectionId) {
+
+  // hide all sections
+  document.getElementById("privacy").classList.add("hidden");
+  document.getElementById("terms").classList.add("hidden");
+  document.getElementById("disclaimer").classList.add("hidden");
+  document.getElementById("consent").classList.add("hidden");
+  document.getElementById("refund").classList.add("hidden");
+
+  // show selected section
+  document.getElementById(sectionId).classList.remove("hidden");
+
+  // scroll to top
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+</script>
+
+</body>
+</html>
