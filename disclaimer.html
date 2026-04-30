@@ -124,16 +124,31 @@
             <span>AIDO</span>
         </div>
 
-        <nav>
+        <!-- DESKTOP MENU -->
+        <nav class="hidden md:block">
             <a href="index.html">Home</a>
             <a href="index.html#about">About</a>
             <a href="index.html#services">Services</a>
             <a href="how-it-works.html">How it Works</a>
         </nav>
 
+        <!-- MOBILE BUTTON -->
+        <button onclick="toggleMenu()" class="md:hidden text-2xl">
+            ☰
+        </button>
+
     </div>
 </header>
 
+<div id="mobileMenu" 
+class="hidden flex flex-col bg-white shadow-md px-6 py-4 md:hidden absolute top-16 left-0 w-full z-50">
+
+    <a href="index.html" class="py-3 border-b">Home</a>
+    <a href="index.html#about" class="py-3 border-b">About</a>
+    <a href="index.html#services" class="py-3 border-b">Services</a>
+    <a href="how-it-works.html" class="py-3">How it Works</a>
+
+</div>
 <!-- HERO -->
 <section class="page-hero">
     <h1>Medical Disclaimer</h1>
@@ -206,6 +221,20 @@
 
     </div>
 </div>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("hidden");
+}
+</script>
+
+<script>
+document.querySelectorAll("#mobileMenu a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("mobileMenu").classList.add("hidden");
+    });
+});
+</script>
 
 </body>
 </html>

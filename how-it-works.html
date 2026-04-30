@@ -18,13 +18,27 @@
 <h1 class="text-xl font-bold text-green-600">AIDO</h1>
 </div>
 
+<!-- DESKTOP MENU -->
 <nav class="space-x-6 hidden md:block">
 <a href="index.html" class="hover:text-green-500">Home</a>
 <a href="index.html#about" class="hover:text-green-500">About</a>
 <a href="index.html#services" class="hover:text-green-500">Services</a>
 </nav>
+
+<!-- MOBILE BUTTON -->
+<button onclick="toggleMenu()" class="md:hidden text-2xl">
+☰
+</button>
 </div>
 </header>
+<div id="mobileMenu" 
+class="hidden flex flex-col bg-white shadow-md px-6 py-4 md:hidden absolute top-16 left-0 w-full z-50">
+
+<a href="index.html" class="py-3 border-b">Home</a>
+<a href="index.html#about" class="py-3 border-b">About</a>
+<a href="index.html#services" class="py-3">Services</a>
+
+</div>
 
 <!-- HERO -->
 <section class="pt-28 pb-16 text-center bg-gradient-to-r from-blue-600 to-green-600 text-white">
@@ -105,6 +119,20 @@ class="bg-green-500 text-white px-6 py-3 rounded-full shadow hover:bg-green-600 
 Go Back to Home
 </a>
 </section>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+
+    menu.classList.toggle("hidden");
+}
+</script>
+<script>
+document.querySelectorAll("#mobileMenu a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("mobileMenu").classList.add("hidden");
+    });
+});
+</script>
 
 </body>
 </html>
