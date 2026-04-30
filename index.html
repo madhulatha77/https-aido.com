@@ -53,24 +53,43 @@ scroll-behavior: smooth;
 <nav class="fixed w-full bg-white/80 backdrop-blur-lg shadow z-50">
 <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
+<!-- LOGO -->
 <div class="flex items-center gap-3">
-<img src="images/logo.png" class="w-10 h-10 rounded-full shadow-md bg-white p-1">
-<div>
-<h1 class="text-lg font-bold text-gray-800">AIDO</h1>
-<p class="text-xs text-gray-500 -mt-1">Healthcare at Your Doorstep</p>
-</div>
-</div>
-
-<div class="hidden md:flex items-center gap-10 text-gray-700 font-medium ml-auto">
-<a href="#" class="hover:text-green-600">Home</a>
-<a href="#about" class="hover:text-green-600">About</a>
-<a href="#services" class="hover:text-green-600">Services</a>
-<a href="how-it-works.html" class="hover:text-green-500">How it Works</a>
+    <img src="images/logo.png" class="w-10 h-10 rounded-full shadow-md bg-white p-1">
+    <div>
+        <h1 class="text-lg font-bold text-gray-800">AIDO</h1>
+        <p class="text-xs text-gray-500 -mt-1">Healthcare at Your Doorstep</p>
+    </div>
 </div>
 
+<!-- DESKTOP MENU -->
+<div class="hidden md:flex items-center gap-10 text-gray-700 font-medium">
+    <a href="#" class="hover:text-green-600">Home</a>
+    <a href="#about" class="hover:text-green-600">About</a>
+    <a href="#services" class="hover:text-green-600">Services</a>
+    <a href="how-it-works.html" class="hover:text-green-600">How it Works</a>
+</div>
+
+<!-- MOBILE BUTTON -->
+<button onclick="toggleMenu()" class="md:hidden text-2xl">
+    ☰
+</button>
 
 </div>
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu" 
+class="hidden flex flex-col bg-white shadow-md px-6 py-4 md:hidden absolute top-full left-0 w-full z-50">
+    
+    <a href="#" class="py-3 border-b">Home</a>
+    <a href="#about" class="py-3 border-b">About</a>
+    <a href="#services" class="py-3 border-b">Services</a>
+    <a href="how-it-works.html" class="py-3">How it Works</a>
+
+</div>
+
 </nav>
+<div id="overlay" class="hidden fixed inset-0 bg-black/40 z-40"></div>
 
 <!-- HERO -->
 <section class="hero-bg text-white pt-32 pb-20 curve">
@@ -520,15 +539,6 @@ function closeVideo() {
   video.src = ""; // reset
 }
 
-function closeVideo() {
-  const modal = document.getElementById("videoModal");
-  const video = document.getElementById("videoPlayer");
-
-  modal.classList.add("hidden");
-  modal.classList.remove("flex");
-
-  video.pause();
-}
 </script>
 
 <script>
@@ -547,6 +557,30 @@ function showSection(sectionId) {
   // scroll to top
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
+</script>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    const overlay = document.getElementById("overlay");
+    const button = event.target;
+
+    menu.classList.toggle("hidden");
+    overlay.classList.toggle("hidden");
+
+    if (menu.classList.contains("hidden")) {
+        button.textContent = "☰";
+    } else {
+        button.textContent = "✕";
+    }
+}
+</script>
+<script>
+document.querySelectorAll("#mobileMenu a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("mobileMenu").classList.add("hidden");
+    });
+});
 </script>
 
 </body>
