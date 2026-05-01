@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <!-- ✅ FIX -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Disclaimer - AIDO</title>
 
@@ -17,7 +21,6 @@
             color: #1e2a38;
         }
 
-        /* NAVBAR */
         .topbar {
             background: #fff;
             padding: 15px 40px;
@@ -55,7 +58,6 @@
             color: #00b894;
         }
 
-        /* HERO */
         .page-hero {
             background: #f8f9fb;
             padding: 50px 20px;
@@ -72,14 +74,12 @@
             color: #666;
         }
 
-        /* CONTAINER */
         .container {
             max-width: 900px;
             margin: 40px auto;
             padding: 0 20px;
         }
 
-        /* CARD */
         .content-card {
             background: #fff;
             padding: 40px;
@@ -87,7 +87,6 @@
             box-shadow: 0 8px 30px rgba(0,0,0,0.06);
         }
 
-        /* SECTIONS */
         .section {
             margin-bottom: 25px;
         }
@@ -97,7 +96,6 @@
             padding-bottom: 20px;
         }
 
-        /* HIGHLIGHT */
         .highlight {
             color: #e74c3c;
             font-weight: bold;
@@ -115,7 +113,6 @@
 
 <body>
 
-<!-- NAVBAR -->
 <header class="topbar">
     <div class="nav-container">
 
@@ -124,7 +121,6 @@
             <span>AIDO</span>
         </div>
 
-        <!-- DESKTOP MENU -->
         <nav class="hidden md:block">
             <a href="index.html">Home</a>
             <a href="index.html#about">About</a>
@@ -132,7 +128,6 @@
             <a href="how-it-works.html">How it Works</a>
         </nav>
 
-        <!-- MOBILE BUTTON -->
         <button onclick="toggleMenu()" class="md:hidden text-2xl">
             ☰
         </button>
@@ -149,13 +144,12 @@ class="hidden flex flex-col bg-white shadow-md px-6 py-4 md:hidden absolute top-
     <a href="how-it-works.html" class="py-3">How it Works</a>
 
 </div>
-<!-- HERO -->
+
 <section class="page-hero">
     <h1>Medical Disclaimer</h1>
     <p>Important information about the role of AIDO and healthcare service responsibilities.</p>
 </section>
 
-<!-- CONTENT -->
 <div class="container">
     <div class="content-card">
 
@@ -163,52 +157,32 @@ class="hidden flex flex-col bg-white shadow-md px-6 py-4 md:hidden absolute top-
 
         <div class="section">
             <h2>Platform Role</h2>
-            <p>
-                AIDO is a digital healthcare coordination platform operated by DPDPD Private Limited.
-            </p>
-            <p>
-                The platform enables patients to book healthcare services delivered by partner hospitals and their authorized healthcare professionals.
-            </p>
+            <p>AIDO is a digital healthcare coordination platform operated by DPDPD Private Limited.</p>
+            <p>The platform enables patients to book healthcare services delivered by partner hospitals and their authorized healthcare professionals.</p>
         </div>
 
         <div class="section">
             <h2>Not a Healthcare Provider</h2>
-            <p>
-                AIDO is not a hospital, clinic, or medical practitioner.
-            </p>
-            <p>
-                The platform provides technology infrastructure for booking and coordinating healthcare services but does not directly provide medical diagnosis, treatment, or clinical care.
-            </p>
+            <p>AIDO is not a hospital, clinic, or medical practitioner.</p>
+            <p>The platform provides technology infrastructure but does not directly provide medical care.</p>
         </div>
 
         <div class="section">
             <h2>Healthcare Service Providers</h2>
-            <p>
-                Healthcare services booked through AIDO are delivered by licensed doctors, nurses, technicians, and other healthcare professionals associated with partner hospitals.
-            </p>
-            <p>
-                The respective partner hospital and its healthcare professionals remain responsible for medical supervision, treatment decisions, and patient care.
-            </p>
+            <p>Services are delivered by licensed professionals associated with partner hospitals.</p>
+            <p>The hospital remains responsible for treatment and care.</p>
         </div>
 
         <div class="section">
             <h2>Emergency Situations</h2>
-            <p class="highlight">
-                AIDO does not provide emergency medical services.
-            </p>
-            <p>
-                If you are experiencing a medical emergency, please immediately contact emergency services or visit the nearest hospital.
-            </p>
+            <p class="highlight">AIDO does not provide emergency medical services.</p>
+            <p>Contact emergency services or visit nearest hospital.</p>
         </div>
 
         <div class="section">
             <h2>Medical Advice</h2>
-            <p>
-                Medical decisions should always be taken in consultation with qualified doctors or licensed healthcare professionals.
-            </p>
-            <p>
-                Information provided through the AIDO platform should not be considered a substitute for professional medical advice or hospital care where required.
-            </p>
+            <p>Always consult qualified professionals.</p>
+            <p>Platform information is not a substitute for medical advice.</p>
         </div>
 
         <div class="section">
@@ -221,14 +195,13 @@ class="hidden flex flex-col bg-white shadow-md px-6 py-4 md:hidden absolute top-
 
     </div>
 </div>
+
 <script>
 function toggleMenu() {
     const menu = document.getElementById("mobileMenu");
     menu.classList.toggle("hidden");
 }
-</script>
 
-<script>
 document.querySelectorAll("#mobileMenu a").forEach(link => {
     link.addEventListener("click", () => {
         document.getElementById("mobileMenu").classList.add("hidden");

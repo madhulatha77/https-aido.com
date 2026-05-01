@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <!-- ✅ ONLY ADDITION (DO NOT REMOVE) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - AIDO</title>
 
@@ -126,7 +130,7 @@
             <span>AIDO</span>
         </div>
 
-        <!-- DESKTOP MENU -->
+        <!-- ✅ DESKTOP MENU -->
         <nav class="hidden md:block">
             <a href="index.html">Home</a>
             <a href="index.html#about">About</a>
@@ -134,7 +138,7 @@
             <a href="how-it-works.html">How it Works</a>
         </nav>
 
-        <!-- MOBILE BUTTON -->
+        <!-- ✅ MOBILE BUTTON -->
         <button onclick="toggleMenu()" class="md:hidden text-2xl">
             ☰
         </button>
@@ -142,6 +146,7 @@
     </div>
 </header>
 
+<!-- ✅ MOBILE MENU -->
 <div id="mobileMenu" 
 class="hidden flex flex-col bg-white shadow-md px-6 py-4 md:hidden absolute top-16 left-0 w-full z-50">
 
@@ -257,14 +262,13 @@ class="hidden flex flex-col bg-white shadow-md px-6 py-4 md:hidden absolute top-
     </div>
 </div>
 
+<!-- JS -->
 <script>
 function toggleMenu() {
     const menu = document.getElementById("mobileMenu");
     menu.classList.toggle("hidden");
 }
-</script>
 
-<script>
 document.querySelectorAll("#mobileMenu a").forEach(link => {
     link.addEventListener("click", () => {
         document.getElementById("mobileMenu").classList.add("hidden");

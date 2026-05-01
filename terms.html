@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <!-- ✅ ONLY FIX -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms & Conditions - AIDO</title>
 
@@ -25,7 +29,6 @@
             margin-bottom: 10px;
         }
 
-        /* NAVBAR */
         .topbar {
             background: #fff;
             padding: 15px 40px;
@@ -63,7 +66,6 @@
             color: #00b894;
         }
 
-        /* HERO */
         .page-hero {
             background: #f8f9fb;
             padding: 50px 20px;
@@ -80,14 +82,12 @@
             color: #666;
         }
 
-        /* CONTAINER */
         .container {
             max-width: 900px;
             margin: 40px auto;
             padding: 0 20px;
         }
 
-        /* CARD */
         .content-card {
             background: #fff;
             padding: 40px;
@@ -95,7 +95,6 @@
             box-shadow: 0 8px 30px rgba(0,0,0,0.06);
         }
 
-        /* SECTIONS */
         .section {
             margin-bottom: 25px;
         }
@@ -105,7 +104,6 @@
             padding-bottom: 20px;
         }
 
-        /* HIGHLIGHT */
         .highlight {
             color: #e67e22;
             font-weight: bold;
@@ -123,7 +121,6 @@
 
 <body>
 
-<!-- NAVBAR -->
 <header class="topbar">
     <div class="nav-container">
 
@@ -132,7 +129,6 @@
             <span>AIDO</span>
         </div>
 
-        <!-- DESKTOP MENU -->
         <nav class="hidden md:block">
             <a href="index.html">Home</a>
             <a href="index.html#about">About</a>
@@ -140,7 +136,6 @@
             <a href="how-it-works.html">How it Works</a>
         </nav>
 
-        <!-- MOBILE BUTTON -->
         <button onclick="toggleMenu()" class="md:hidden text-2xl">
             ☰
         </button>
@@ -158,13 +153,11 @@ class="hidden flex flex-col bg-white shadow-md px-6 py-4 md:hidden absolute top-
 
 </div>
 
-<!-- HERO -->
 <section class="page-hero">
     <h1>Terms & Conditions</h1>
     <p>Understand the rules, responsibilities, and legal framework of using AIDO services.</p>
 </section>
 
-<!-- CONTENT -->
 <div class="container">
     <div class="content-card">
 
@@ -248,13 +241,13 @@ class="hidden flex flex-col bg-white shadow-md px-6 py-4 md:hidden absolute top-
 
     </div>
 </div>
+
 <script>
 function toggleMenu() {
     const menu = document.getElementById("mobileMenu");
     menu.classList.toggle("hidden");
 }
-</script>
-<script>
+
 document.querySelectorAll("#mobileMenu a").forEach(link => {
     link.addEventListener("click", () => {
         document.getElementById("mobileMenu").classList.add("hidden");
