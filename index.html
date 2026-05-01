@@ -578,11 +578,21 @@ function toggleMenu() {
         button.textContent = "✕";
     }
 }
+document.getElementById("overlay").addEventListener("click", toggleMenu);
 </script>
+
 <script>
 document.querySelectorAll("#mobileMenu a").forEach(link => {
     link.addEventListener("click", () => {
-        document.getElementById("mobileMenu").classList.add("hidden");
+        const menu = document.getElementById("mobileMenu");
+        const overlay = document.getElementById("overlay");
+        const button = document.querySelector("button[onclick='toggleMenu()']");
+
+        menu.classList.add("hidden");
+        overlay.classList.add("hidden");
+
+        // reset icon back to ☰
+        button.textContent = "☰";
     });
 });
 </script>
